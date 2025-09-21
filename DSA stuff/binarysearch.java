@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class test {
+public class binarysearch {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -18,7 +18,14 @@ public class test {
     //     return binarysearch(a, n, left, mid - 1);
     // }
 
+    /**
+     * This function calculates the square root of a number to the 
+     * maximum accuracy of the double bit representation.
+     * @param n any positive double number
+     * @return the square root of n 
+     */
     public static double binarysearch_sqrt(double n) {
+        if (n < 0.0) return -1.0;
         double left = 1;
         double right = n;
         double temp = 0;
