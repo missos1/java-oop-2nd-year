@@ -40,21 +40,21 @@ public class RightSideViewBinTree {
 
         while (!q.isEmpty()) {
             int len = q.size();
-            List<Integer> currlv_candidates = new ArrayList<>();
+            int candidate = 0;
             
             for (int i = 0; i < len; i++) {
                 tre check = q.poll();
-                currlv_candidates.add(check.data);
+                candidate = check.data;
 
-                if (check.right != null) {
-                    q.add(check.right);
-                }
                 if (check.left != null) {
                     q.add(check.left);
                 }
+                if (check.right != null) {
+                    q.add(check.right);
+                }
             }
 
-            result.add(currlv_candidates.get(0));
+            result.add(candidate);
         }
         return result;
     }
