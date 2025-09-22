@@ -3,7 +3,7 @@ import java.util.Set;
 
 public class StudentManagement {
     private final Student[] students = new Student[100];
-    private int curr_arraysize = 0; 
+    private int currentarraysize = 0; 
 
     /**
      * Check if two students are in the same group.
@@ -17,19 +17,22 @@ public class StudentManagement {
 
     /**
      * Add student to the students list.
-     * @param newStudent the new student needed to be added
+     * @param newStudent the new student needed adding
      */
     public void addStudent(Student newStudent) {
-        if (curr_arraysize == 100) return;
+        if (currentarraysize == 100) {
+            return;
+        }
 
-        students[curr_arraysize++] = newStudent;
+        students[currentarraysize++] = newStudent;
     }
+
     /**
      * Get the full student list by groups.
      * @return the string of the list by groups
      */
     public String studentsByGroup() {
-        Set<String> groups_inappearenceorder = new LinkedHashSet<>();
+        Set<String> groupsInAppearenceOrder = new LinkedHashSet<>();
         String result = "";
 
         for (Student s : students) {
@@ -37,10 +40,10 @@ public class StudentManagement {
                 break;
             }
 
-            groups_inappearenceorder.add(s.getGroup());
+            groupsInAppearenceOrder.add(s.getGroup());
         }
 
-        for (String group : groups_inappearenceorder) {
+        for (String group : groupsInAppearenceOrder) {
             result += group + "\n";
             for (Student s : students) {
                 if (s == null) {
@@ -56,54 +59,35 @@ public class StudentManagement {
         return result;
     }
 
+    /**
+     * Remove a student by ids.
+     * @param id the id of the student needed deleting;
+     */
     public void removeStudent(String id) {
-        int curr_index = 0;
-        for (int i = 0; i < curr_arraysize; i++) {
-            curr_index = i;
+        int currIndex = 0;
+        while (currIndex < currentarraysize) {
+            if (students[currIndex].getId().equals(id)) {
+                break;
+            }
+            currIndex++;
         }
 
-        if (curr_index == curr_arraysize) {
+        if (currIndex == currentarraysize) {
             return;
         }
         
-        for (int i = curr_index; i < curr_arraysize - 1; i++) {
+        for (int i = currIndex; i < currentarraysize; i++) {
             students[i] = students[i + 1];
         }
-        students[curr_arraysize - 1] = null;
-        curr_arraysize--;
+        students[currentarraysize - 1] = null;
+        currentarraysize--;
     }
 
+    /**
+     * Main function.
+     * @param args takes in cmd
+     */
     public static void main(String[] args) {
-        Student Student = new Student();
-
-        Student.setName("Nguyen Van An");
-        Student.setId("17020001"); 
-        Student.setGroup("K62CC"); 
-        Student.setEmail("17020001@vnu.edu.vn");
-
-        Student student1 = new Student();
-        student1.setName("Nguyen Van B");
-        student1.setId("17020002");
-        student1.setGroup("K62CC");
-        student1.setEmail("17020002@vnu.edu.vn");
-
-        Student student2 = new Student("Nguyen Van C", "17020003", "17020003@vnu.edu.vn");
-        Student student3 = new Student("Nguyen Van D", "17020004", "17020004@vnu.edu.vn");
-        Student student4 = new Student();
-        
-        StudentManagement t = new StudentManagement();
-        t.addStudent(Student);
-        t.addStudent(student1);
-        t.addStudent(student2);
-        t.addStudent(student3);
-        t.addStudent(student4);
-
-        System.out.print(t.studentsByGroup());
-
-        t.removeStudent("000");
-
-        System.out.print(t.studentsByGroup());
-
         
     }
 }

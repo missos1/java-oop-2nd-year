@@ -16,9 +16,9 @@ public class Student {
 
     /**
      * Constructor 2.
-     * @param name
-     * @param id
-     * @param email
+     * @param name student's name
+     * @param id student's id
+     * @param email student's email
      */
     public Student(String name, String id, String email) {
         this.name = name;
@@ -29,7 +29,7 @@ public class Student {
 
     /**
      * Constructor 2.
-     * @param s
+     * @param s student object
      */
     public Student(Student s) {
         this.name = s.name;
