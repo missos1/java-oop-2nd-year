@@ -3,8 +3,8 @@ public class Transaction {
     private double amount;
     private double balance;
 
-    public final static String DEPOSIT = "deposit";
-    public final static String WITHDRAW = "withdraw";
+    public static final String DEPOSIT = "deposit";
+    public static final String WITHDRAW = "withdraw";
 
     /**
      * Constructor.
