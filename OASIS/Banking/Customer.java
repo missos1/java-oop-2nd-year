@@ -1,7 +1,7 @@
 package Banking;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Customer {
     private List<Account> accountList = new ArrayList<>();
@@ -31,7 +31,7 @@ public class Customer {
      * 
      * @return info in string format
      */
-    public String getCustomerInfo(){
+    public String getCustomerInfo() {
         return "Số CMND: " + idNumber
          + ". Họ tên: " + fullName + ".";
     }
@@ -41,7 +41,7 @@ public class Customer {
      * 
      * @param account the new account needed to be added
      */
-    public void addAccount(Account account){
+    public void addAccount(Account account) {
         accountList.add(account);
     }
 
@@ -50,7 +50,7 @@ public class Customer {
      * 
      * @param account the desired account to remove;
      */
-    public void removeAccount(Account account){
+    public void removeAccount(Account account) {
         accountList.remove(account);
     }
 

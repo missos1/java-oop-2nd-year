@@ -15,7 +15,7 @@ public class SavingsAccount extends Account {
     /**
      * Withdraw money from the account.
      * 
-     * If the withdraw amount is greater than 1000.0,
+     * </p>If the withdraw amount is greater than 1000.0,
      * an {@code InvalidFundingAmountException} is thrown.
      * If the balance is less than 5000.0, an
      * {@code InsufficientFundsException} is thrown.</p>
@@ -33,7 +33,10 @@ public class SavingsAccount extends Account {
                 throw new InsufficientFundsException(5000.0);
             }
 
+            double initialBalance = balance;
             doWithdrawing(amount);
+            addTransaction(new Transaction(Transaction.TYPE_WITHDRAW_SAVINGS, 
+            amount, initialBalance, balance));
         } catch (BankException exception) {
             System.out.println(exception);
         }
@@ -47,7 +50,10 @@ public class SavingsAccount extends Account {
     @Override
     public void deposit(double amount) {
         try {
+            double initialBalance = balance;
             doDepositing(amount);
+            addTransaction(new Transaction(Transaction.TYPE_DEPOSIT_SAVINGS, 
+            amount, initialBalance, balance));
         } catch (BankException exception) {
             System.out.println(exception);
         }

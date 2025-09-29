@@ -24,7 +24,7 @@ public class Bank {
 
         while (sc.hasNextLine()) {
             String line = sc.nextLine().trim();
-            if(line.isEmpty()) {
+            if (line.isEmpty()) {
                 continue;
             }
 
@@ -91,5 +91,14 @@ public class Bank {
         }
 
         return customersInfo;
+    }   
+
+    /**
+     * Get customer list.
+     * 
+     * @return customer list
+     */
+    public List<Customer> getCustomerList() {
+        return customerList;
     }
 }

@@ -1,7 +1,7 @@
 package Banking;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Account {
     protected long accountNumber;
@@ -28,16 +28,35 @@ public abstract class Account {
     }
 
     /**
+     * Get account number.
+     * 
+     * @return account number
+     */
+    public long getAccountNumber() {
+        return accountNumber;
+    }
+
+
+    /**
+     * Get balance.
+     * 
+     * @return balance
+     */
+    public double getBalance() {
+        return balance;
+    }
+
+    /**
      * Abstract withdraw class for inheritance. 
      * 
-     * @param amount
+     * @param amount money amount 
      */
     public abstract void withdraw(double amount);
 
     /**
      * Abstract deposit class for inheritance. 
      * 
-     * @param amount
+     * @param amount money amount
      */
     public abstract void deposit(double amount);
 
@@ -63,7 +82,8 @@ public abstract class Account {
      * @throws InsufficientFundsException if the balance isn't sufficed
      * throws insufficient exception
      */
-    public void doWithdrawing(double amount) throws InvalidFundingAmountException, InsufficientFundsException {
+    public void doWithdrawing(double amount) throws InvalidFundingAmountException,
+    InsufficientFundsException {
         if (amount > balance) {
             throw new InsufficientFundsException(amount);
         }
@@ -71,6 +91,7 @@ public abstract class Account {
         if (amount < 0.0) {
             throw new InvalidFundingAmountException(amount);
         }
+        
         balance -= amount;
     }
 
@@ -89,7 +110,11 @@ public abstract class Account {
      * @return transaction history in String format
      */
     public String getTransactionHistory() {
-        String transactionHisString = "Lịch sử giao dịch của tài khoản" + accountNumber + ":\n";
+        String transactionHisString = "Lịch sử giao dịch của tài khoản " + accountNumber + ":\n";
+        
+        if (transactionList.isEmpty()) {
+            return transactionHisString;
+        }
         for (Transaction t : transactionList) {
             transactionHisString += t.getTransactionSummary() + "\n";
         }

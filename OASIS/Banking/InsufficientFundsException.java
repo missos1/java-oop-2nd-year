@@ -1,6 +1,6 @@
 package Banking;
 
-public class InsufficientFundsException extends BankException{
+public class InsufficientFundsException extends BankException {
     
     /**
      * Constructor.

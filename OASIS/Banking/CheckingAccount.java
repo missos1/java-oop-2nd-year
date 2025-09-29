@@ -19,7 +19,10 @@ public class CheckingAccount extends Account {
     @Override
     public void withdraw(double amount) {
         try {
+            double initialBalance = balance;
             doWithdrawing(amount);
+            addTransaction(new Transaction(Transaction.TYPE_WITHDRAW_CHECKING, 
+            amount, initialBalance, balance));
         } catch (BankException exception) {
             System.out.println(exception);
         }
@@ -33,7 +36,10 @@ public class CheckingAccount extends Account {
     @Override
     public void deposit(double amount) {
         try {
+            double initialBalance = balance;
             doDepositing(amount);
+            addTransaction(new Transaction(Transaction.TYPE_DEPOSIT_CHECKING, 
+            amount, initialBalance, balance));
         } catch (BankException exception) {
             System.out.println(exception);
         }
