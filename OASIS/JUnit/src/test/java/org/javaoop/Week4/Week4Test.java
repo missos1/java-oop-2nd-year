@@ -1,6 +1,7 @@
 package org.javaoop.Week4;
 
 import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 public class Week4Test {

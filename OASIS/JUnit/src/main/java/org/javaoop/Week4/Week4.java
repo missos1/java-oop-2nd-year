@@ -16,7 +16,7 @@ public class Week4 {
      * @param array an array of integers
      * @return the minimum of the array
      */
-    public static int minArray (int[] array) {
+    public static int minArray(int[] array) {
         int min = array[0];
         for (int i = 1; i < array.length; i++) {
             if (array[i] < min) {
@@ -34,7 +34,7 @@ public class Week4 {
      * @return the category of BMI a person with given weight and height  
      */
     public static String calculateBMI(double weight, double height){
-        double bmi = weight / (height * height);
+        double bmi = Math.round((weight / (height * height)) * 10.0) / 10.0;
 
         System.out.println(bmi + "");
 

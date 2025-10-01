@@ -72,7 +72,9 @@ public class Account {
             double balanceRounded = Math.round(balanceUnrounded * 100.0) / 100.0;
             double amountRounded = Math.round(amountUnrounded * 100.0) / 100.0;
             String operationCheck = transitionList.get(i).getOperation();
-            String operationFinal = (operationCheck.equals(Transaction.DEPOSIT)) ? " Nap tien " : " Rut tien ";
+            String operationFinal = (
+                operationCheck.equals(Transaction.DEPOSIT)
+                ) ? " Nap tien " : " Rut tien ";
 
             System.out.printf(
                 "Giao dich %d:%s$%.2f. So du luc nay: $%.2f.%n", 
