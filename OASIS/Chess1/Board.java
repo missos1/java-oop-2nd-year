@@ -23,7 +23,7 @@ public class Board {
         } else if (!validate(piece.getCoordinatesX(), piece.getCoordinatesY())) {
             return;
         } else {
-            if (getAt(piece.getCoordinatesX(), piece.getCoordinatesY()) != null) {
+            if (this.getAt(piece.getCoordinatesX(), piece.getCoordinatesY()) != null) {
                 return;
             }
         }
@@ -50,9 +50,9 @@ public class Board {
      * @param y row position
      */
     public void removeAt(int x, int y) {
-        for (Piece p : pieces) {
-            if (p.getCoordinatesX() == x && p.getCoordinatesY() == y) {
-                pieces.remove(p);
+        for (int i = 0; i < pieces.size(); i++) {
+            if (pieces.get(i).getCoordinatesX() == x && pieces.get(i).getCoordinatesY() == y) {
+                pieces.remove(i);
                 break;
             }
         }

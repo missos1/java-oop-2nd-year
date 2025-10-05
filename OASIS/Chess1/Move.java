@@ -16,9 +16,8 @@ public class Move {
      * @param endX        destination column
      * @param endY        destination row
      * @param movedPiece  the piece that moved
-     * @param killedPiece the piece that was captured
      */
-    public Move(int startX, int startY, int endX, int endY, Piece movedPiece) {
+    public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
         this.startX = startX;
         this.startY = startY;
         this.endX = endX;
@@ -36,7 +35,7 @@ public class Move {
      * @param movedPiece  the piece that moved
      * @param killedPiece the piece that was captured
      */
-    public Move(int startX, int startY, int endX, int endY, Piece movedPiece, Piece killedPiece) {
+    public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
         this.startX = startX;
         this.startY = startY;
         this.endX = endX;
@@ -55,9 +54,6 @@ public class Move {
     public String toString() {
         String xpos = "";
         switch (endX) {
-            case 1:
-                xpos = "a";
-                break;
             case 2:
                 xpos = "b";
                 break;
@@ -78,6 +74,9 @@ public class Move {
                 break;
             case 8:
                 xpos = "h";
+                break;
+            default:
+                xpos = "a";
                 break;
         }
 

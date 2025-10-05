@@ -36,12 +36,15 @@ public class Game {
         if (killedPiece != null) {
             moveHistory.add(new Move(currentX, currentY, x, y, piece, killedPiece));
             board.removeAt(x, y);
+            board.removeAt(currentX, currentY);
         } else {
             moveHistory.add(new Move(currentX, currentY, x, y, piece));
+            board.removeAt(currentX, currentY);
         }
         
         piece.setCoordinatesX(x);
         piece.setCoordinatesY(y);
+        board.addPiece(piece);
     }
 
     /**
