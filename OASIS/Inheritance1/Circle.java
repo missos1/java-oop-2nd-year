@@ -1,3 +1,5 @@
+package Inheritance1;
+
 public class Circle {
     private double radius;
     private String color;
@@ -29,11 +31,6 @@ public class Circle {
         this.radius = radius;
     }
 
-    /**
-     * Returns the radius of the circle.
-     *
-     * @return the radius
-     */
     public double getRadius() {
         return radius;
     }

@@ -2,6 +2,7 @@
 
 public class Circle extends Shape {
     protected double radius;
+    protected Point center;
 
     /**
      * Default constructor with no parameter.
@@ -31,6 +32,20 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
+    /**
+     * Constructor with 4 parameters.
+     * 
+     * @param center of the circle
+     * @param radius of the circle
+     * @param color of the circle
+     * @param filled fill the circle or not
+     */
+    public Circle(Point center, double radius, String color, boolean filled) {
+        super(color, filled);
+        this.radius = radius;
+        this.center = center;
+    }
+
     public double getRadius() {
         return radius;
     }
@@ -47,9 +62,42 @@ public class Circle extends Shape {
         return 2 * radius * Math.PI;
     }
 
+    public Point getCenter() {
+        return center;
+    }
+
+    public void setCenter(Point center) {
+        this.center = center;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+             return true;
+        }
+        if (!(o instanceof Circle)) {
+            return false;
+        }
+
+        Circle temp = (Circle) o;
+        return temp.radius == radius && temp.center.equals(center);
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+
+        long temp = Double.doubleToLongBits(radius);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        result = prime * result + ((center == null) ? 0 : center.hashCode());
+
+        return result;
+    }
+
     @Override
     public String toString() {
-        return "Circle[radius=" + radius
+        return "Circle[center=" + center.toString() + ",radius=" + radius
         + ",color=" + color + ",filled=" + filled + "]";
     }
 }

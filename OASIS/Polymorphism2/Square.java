@@ -30,6 +30,18 @@ public class Square extends Rectangle {
     }
 
     /**
+     * Constructor with 4 parameters.
+     * 
+     * @param topLeft of the square
+     * @param side of the square
+     * @param color of the square
+     * @param filled fill the square or not
+     */
+    public Square(Point topLeft, double side, String color, boolean filled) {
+        super(topLeft, side, side, color, filled);
+    }
+
+    /**
      * Gets square's side.
      * 
      * @return side of the square
@@ -65,8 +77,18 @@ public class Square extends Rectangle {
     }
 
     @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
     public String toString() {
-        return "Square[side=" + width + ",color="
-        + color + ",filled=" + filled + "]";
+        return "Square[topLeft=" + topLeft.toString() + ",side=" 
+        + width + ",color=" + color + ",filled=" + filled + "]";
     }
 }

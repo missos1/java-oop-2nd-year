@@ -53,8 +53,5 @@ public abstract class Shape {
     public abstract double getPerimeter();
 
     @Override
-    public String toString() {
-        return "Shape[color=" + color
-        + ",filled=" + filled + "]";
-    }
+    public abstract String toString();
 }
