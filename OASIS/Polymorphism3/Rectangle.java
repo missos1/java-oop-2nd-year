@@ -1,5 +1,7 @@
 // package Polymorphism2;
 
+import java.awt.Graphics;
+
 public class Rectangle extends Shape {
     protected double width;
     protected double length;
@@ -32,22 +34,25 @@ public class Rectangle extends Shape {
      */
     public Rectangle(double width, double length, String color,
     boolean filled) {
-        super(color, filled);
+        super(color, filled, 0 , 0);
         this.width = width;
         this.length = length;
     }
 
     /**
-     * Constructor with 4 parameters.
+     * Constructor with 7 parameters.
      * 
      * @param topLeft of the rectangle
      * @param width of the rectangle
      * @param length of the rectangle
      * @param color of the rectangle
+     * @param filled fill the rectangle or not
+     * @param dx x axis velocity of the rectangle
+     * @param dy y axis velocity of the rectangle
      */
     public Rectangle(Point topLeft, double width, double length, String color,
-    boolean filled) {
-        super(color, filled);
+    boolean filled, double dx, double dy) {
+        super(color, filled, dx, dy);
         this.topLeft = topLeft;
         this.width = width;
         this.length = length;
@@ -145,12 +150,24 @@ public class Rectangle extends Shape {
     
     @Override
     public void move() {
-
+        topLeft.setPointX(topLeft.getPointX() + dx);
+        topLeft.setPointY(topLeft.getPointY() + dy);
     }
 
     @Override
     public void draw(Graphics g) {
+        int x = (int) topLeft.getPointX();
+        int y = (int) topLeft.getPointY();
+        int w = (int) width;
+        int h = (int) length;
 
+        g.setColor(stringToColor(this.color));
+
+        if (filled) {
+            g.fillRect(x, y, w, h);
+        } else {
+            g.drawRect(x, y, w, h);
+        }
     }
 }
 

@@ -37,8 +37,8 @@ public class Square extends Rectangle {
      * @param color of the square
      * @param filled fill the square or not
      */
-    public Square(Point topLeft, double side, String color, boolean filled) {
-        super(topLeft, side, side, color, filled);
+    public Square(Point topLeft, double side, String color, boolean filled, double dx, double dy) {
+        super(topLeft, side, side, color, filled, dy, dy);
     }
 
     /**
@@ -90,15 +90,5 @@ public class Square extends Rectangle {
     public String toString() {
         return "Square[topLeft=" + topLeft.toString() + ",side=" 
         + width + ",color=" + color + ",filled=" + filled + "]";
-    }
-
-    @Override
-    public void move() {
-
-    }
-
-    @Override
-    public void draw(Graphics g) {
-
     }
 }

@@ -1,0 +1,1 @@
+shapes.removeIf(s -> (s instanceof Circle));

@@ -7,6 +7,8 @@ import java.awt.Color;
 public abstract class Shape {
     protected String color;
     protected boolean filled;
+    protected double dx;
+    protected double dy;
     protected Color colorr;
 
     /**
@@ -17,14 +19,16 @@ public abstract class Shape {
     }
 
     /**
-     * Constructor with 2 parameters.
+     * Constructor with 4 parameters.
      * 
      * @param color desired color
      * @param filled fill shape or not
      */
-    public Shape(String color, boolean filled) {
+    public Shape(String color, boolean filled, double dx, double dy) {
         this.color = color;
         this.filled = filled;
+        this.dx = dx;
+        this.dy = dy;
     }
 
     public String getColor() {
@@ -70,6 +74,22 @@ public abstract class Shape {
      */
     public void draw(Graphics g) {
 
+    }
+
+    public double getDx() {
+        return dx;
+    }
+
+    public double getDy() {
+        return dy;
+    }
+
+    public void setDx(double dx) {
+        this.dx = dx;
+    }
+
+    public void setDy(double dy) {
+        this.dy = dy;
     }
 
     @Override

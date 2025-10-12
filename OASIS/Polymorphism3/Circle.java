@@ -30,20 +30,22 @@ public class Circle extends Shape {
      * @param filled fill the circle or not
      */
     public Circle(double radius, String color, boolean filled) {
-        super(color, filled);
+        super(color, filled, 0 , 0);
         this.radius = radius;
     }
 
     /**
-     * Constructor with 4 parameters.
+     * Constructor with 6 parameters.
      * 
      * @param center of the circle
      * @param radius of the circle
      * @param color of the circle
      * @param filled fill the circle or not
+     * @param dx x axis velocity of the circle
+     * @param dy y axis velocity of the circle
      */
-    public Circle(Point center, double radius, String color, boolean filled) {
-        super(color, filled);
+    public Circle(Point center, double radius, String color, boolean filled, double dx, double dy) {
+        super(color, filled, dx, dy);
         this.radius = radius;
         this.center = center;
     }
@@ -105,7 +107,8 @@ public class Circle extends Shape {
 
     @Override
     public void move() {
-
+        center.setPointX(center.getPointX() + dx);
+        center.setPointY(center.getPointY() + dy);
     }
 
     @Override
