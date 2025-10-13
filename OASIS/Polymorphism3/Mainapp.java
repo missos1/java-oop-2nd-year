@@ -23,6 +23,9 @@ public class Mainapp {
         });
     }
     
+    /**
+     * Create and show the Layer.
+     */
     private static void createAndShowGUI() {
         JFrame frame = new JFrame("Shape simulator");
 
@@ -38,6 +41,7 @@ public class Mainapp {
         int height = frame.getHeight();
         Mainapp mainapp = new Mainapp();
 
+        // check for key pressed
         frame.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -73,6 +77,7 @@ public class Mainapp {
             }
         });
 
+        // looping
         Timer timer = new Timer(delay, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -88,11 +93,23 @@ public class Mainapp {
         frame.setVisible(true);
     }
 
+    /**
+     * Returns a random color from the array.
+     * 
+     * @return a random color in the array
+     */
     private String randomColor() {
         String[] colors = {"red", "blue", "green", "gray", "cyan", "orange", "pink"};
         return colors[random.nextInt(colors.length)];
     }
 
+    /**
+     * Return a random speed in a certain range.
+     * 
+     * @param max upper bound of the speed
+     * @param min lower bound of the speed
+     * @return randomized speed
+     */
     private int randomSpeed(int max, int min) {
         int speed = random.nextInt(max + 1 - min) + min;
         return speed != 0 ? speed : 1;

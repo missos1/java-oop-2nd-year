@@ -23,6 +23,8 @@ public abstract class Shape {
      * 
      * @param color desired color
      * @param filled fill shape or not
+     * @param dx x axis velocity of the shape
+     * @param dy y axis velocity of the shape
      */
     public Shape(String color, boolean filled, double dx, double dy) {
         this.color = color;
@@ -64,17 +66,14 @@ public abstract class Shape {
     /**
      * Updates movement of the shape.
      */
-    public void move() {
-
-    }
+    public abstract void move();
 
     /**
-     * Draws the shape onto window
+     * Draws the shape onto window.
+     * 
      * @param g the Graphics param of swing
      */
-    public void draw(Graphics g) {
-
-    }
+    public abstract void draw(Graphics g);
 
     public double getDx() {
         return dx;
@@ -95,6 +94,12 @@ public abstract class Shape {
     @Override
     public abstract String toString();
 
+    /**
+     * Converts a String color to Color datatype
+     * 
+     * @param color the color in string format 
+     * @return color in Color of AWT
+     */
     protected Color stringToColor(String color) {
         if (color == null) {
             return Color.BLACK;

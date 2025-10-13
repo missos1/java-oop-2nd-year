@@ -1,3 +1,5 @@
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -114,10 +116,19 @@ public class Layer extends JPanel {
         int currentWidth = getWidth();
         int currentHeight = getHeight();
 
+        
         for (Shape s : shapes) {
             checkCollision(s, currentWidth, currentHeight);
             s.move();
             s.draw(g);
         }
+
+        g.setColor(Color.BLACK);
+        Font customFont = new Font("Arial", Font.BOLD, 24);
+        int count = shapes.size();
+        g.setFont(customFont);
+
+        String currentString = "Shapes count: " + count;
+        g.drawString(currentString, 0, 24);
     }
 }
