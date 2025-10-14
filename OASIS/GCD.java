@@ -6,6 +6,7 @@ public class GCD {
         int a = sc.nextInt();
         int b = sc.nextInt();
         System.out.println(gcd(a, b));
+        sc.close();
     }
 
     /**

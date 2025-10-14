@@ -5,6 +5,7 @@ public class Fibo {
         Scanner sc = new Scanner(System.in);
         long n = sc.nextLong();
         System.out.println(fibonacci(n));
+        sc.close();
     }
 
     /**
