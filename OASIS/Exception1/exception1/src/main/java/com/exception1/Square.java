@@ -1,4 +1,4 @@
-// package com.exception1;
+package com.exception1;
 
 public class Square extends Expression {
     private Expression expression;

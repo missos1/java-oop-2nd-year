@@ -1,4 +1,4 @@
-// package com.exception1;
+package com.exception1;
 
 public class Numeral extends Expression {
     private double value;

@@ -1,4 +1,4 @@
-// package com.exception1;
+package com.exception1;
 
 import static org.junit.Assert.assertEquals;
 

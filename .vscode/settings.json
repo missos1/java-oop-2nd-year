@@ -4,5 +4,6 @@
         "OASIS",
         "DSA stuff",
         "RSVBinaryTree"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

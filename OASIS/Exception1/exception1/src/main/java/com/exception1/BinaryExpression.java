@@ -1,4 +1,4 @@
-// package com.exception1;
+package com.exception1;
 
 public abstract class BinaryExpression extends Expression {
     protected Expression left; 
