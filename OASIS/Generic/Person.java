@@ -3,10 +3,20 @@ public class Person implements Week11<Person>, Comparable<Person> {
     protected int age;
     protected String address;
 
+    /**
+     * 1st Constructor.
+     */
     public Person() {
 
     }
 
+    /**
+     * 2nd Constructor.
+     * 
+     * @param name name of the person
+     * @param age their age
+     * @param address their address
+     */
     public Person(String name, int age, String address) {
         this.name = name;
         this.age = age;
