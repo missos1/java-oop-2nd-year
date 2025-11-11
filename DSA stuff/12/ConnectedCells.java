@@ -65,12 +65,12 @@ public class ConnectedCells {
                     int newI = i + u;
                     int newJ = j + v;
                     if (!isNotValidNode(newI, newJ, matrix, visited)) {
-                            queue.add(new int[] {newI, newJ});
-                            visited.get(newI).set(newJ, true);
+                        queue.add(new int[] {newI, newJ});
+                        visited.get(newI).set(newJ, true);
                     }
-                 }
-               }  
-            }
+                }
+            }  
+        }
         return count; 
     }
 

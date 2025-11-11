@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
@@ -7,7 +6,7 @@ import java.util.Queue;
 public class BfsShortest {
     public static List<Integer> bfs(int n, int m, List<List<Integer>> edges, int s) {
         List<List <Integer>> adjList = new ArrayList<>(n + 1);
-
+    
         for (int i = 0; i <= n; i++) {
             adjList.add(new ArrayList<>());
         }

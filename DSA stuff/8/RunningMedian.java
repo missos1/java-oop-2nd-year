@@ -39,7 +39,6 @@ public class RunningMedian {
             } else {
                 result.add((double) minPQ.peek());
             }
-            
         }
         
         return result;

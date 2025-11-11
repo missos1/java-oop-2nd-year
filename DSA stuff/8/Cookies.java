@@ -3,14 +3,14 @@ import java.util.Queue;
 
 public class Cookies {
     public static int cookies(int k, List<Integer> A) {
-        Queue<Integer> pQueue = new PriorityQueue<>(A); // min-heap priority queue
+        Queue<Integer> pQueue = new PriorityQueue<>(A); // min-heap priority queue o n
         int iteration = 0;
         
         while (pQueue.size() > 1) {
             if (pQueue.peek() >= k) {
                 return iteration; // all cookies are sweet enough
             }
-            int m1 = pQueue.poll(); // least sweet cookie
+            int m1 = pQueue.poll(); // least sweet cookie log n
             int m2 = pQueue.poll(); // second least sweet cookie
             pQueue.add(m1 + m2 * 2); // combine cookies
             iteration++; // increment operation count
@@ -19,7 +19,7 @@ public class Cookies {
         if (pQueue.peek() >= k) { // check if last cookie is sweet enough
             return iteration;
         }
-        
+        //n log n 
         return -1;
     }
 }
