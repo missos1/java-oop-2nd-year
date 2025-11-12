@@ -1,3 +1,4 @@
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +26,7 @@ public class BfsShortest {
 
         distances[s] = 0; // distance to self is 0
 
-        Queue<Integer> queue = new ArrayList<>();
+        Queue<Integer> queue = new ArrayDeque<>();
         queue.offer(s); // enqueue the start node
 
         while (!queue.isEmpty()) {
@@ -38,7 +39,7 @@ public class BfsShortest {
             }
         }
         
-        List<Integer> result = new LinkedList<>();
+        List<Integer> result = new ArrayList<>();
 
         for (int i = 1; i <= n; i++) {
             if (s != i) {
